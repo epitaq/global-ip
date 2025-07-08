@@ -1,0 +1,10 @@
+version: '3.8' # Docker Compose ファイルのバージョン。新しい機能が使える3.8を推奨。
+
+services:
+  web:
+    build: . # 現在のディレクトリにあるDockerfileを使ってイメージをビルド
+    ports:
+      - "80:80" # ホストの80番ポートをコンテナの80番ポートにマッピング
+    volumes:
+      - .:/app # 現在のディレクトリをコンテナの/appディレクトリにマウント
+    # command: npm start # DockerfileでCMDが設定されている場合は不要

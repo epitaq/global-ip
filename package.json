@@ -1,0 +1,13 @@
+{
+  "name": "my-ip-app",
+  "version": "1.0.0",
+  "description": "A simple app to show global IP address",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+
+  }
+}
