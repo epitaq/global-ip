@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: grobal-ip
-          image: ghcr.io/epitaq/global-ip:0.0.2
+          image: ghcr.io/epitaq/global-ip:0.0.3
           ports:
             - containerPort: 80
           resources:
