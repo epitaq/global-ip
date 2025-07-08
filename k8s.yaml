@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grobal-ip
+  namespace: grobal-ip
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cfb-client
+  template:
+    metadata:
+      labels:
+        app: cfb-client
+        namespace: grobal-ip
+    spec:
+      containers:
+        - name: grobal-ip
+          image: ghcr.io/epitaq/global-ip:0.0.2
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "500Mi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grobal-ip
+  namespace: grobal-ip
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
